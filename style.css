@@ -1,1 +1,185 @@
 /* Add you CSS here */
+/* give the header a blue background and white text */
+/* Style the header */
+header {
+    background-color: #ebacac;
+    color: rgb(122, 171, 168);
+    padding: 10px;
+    text-align: center;
+}
+
+/* Style the navigation bar */
+nav {
+    background-color: #2e2e2e;
+    padding: 30px;
+}
+
+/* Style the list inside the navigation bar */
+nav ul {
+    list-style-type: none; /* Remove bullets */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Arrange items in a row */
+    justify-content: center; /* Center the items */
+}
+
+/* Style the links inside the navigation bar */
+nav ul li {
+    margin: 0 100px; /* Add space between items */
+}
+
+nav ul li a {
+    color: rgb(1000, 1000, 1000);
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    font-size: 2em
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Center the main content section */
+main {
+  /* Set a maximum width so the content doesn't stretch too wide */
+  max-width: 1000px;
+  /* Center the main section horizontally */
+  margin: 0 auto; /* Remove top margin so it attaches to welcome section */
+  /* Add some padding for better appearance */
+  padding: 10px;  
+  /* Optional: add rounded corners */
+  border-radius: 0 0 8px 8px; /* Only round the bottom corners */
+  /* Center all text inside the main section */
+  text-align: center; /* This centers all content in main */
+}
+
+/* Center all main content headings (h2) */
+main h2 {
+  text-align: center; /* This centers the heading text */
+}
+
+/* Welcome section styles */
+/* This section will have a light purple background with a simple striped texture */
+.welcome-section {
+  /* Light purple background */
+  background-color: #a6a8e3;
+  /* Add a simple striped texture using a linear gradient */
+  background-image: repeating-linear-gradient(
+    135deg,           /* Angle of the stripes */
+    #5a717c,          /* Start with the base color */
+    #98944b 20px,     /* Keep the base color for 20px */
+    #538077 20px,     /* Start the stripe color at 20px */
+    #a785a5f0 40px      /* Stripe color for 20px, then repeat */
+  );
+  /* Make the section take up about half the page height */
+  min-height: 40vh;
+  /* Center the text vertically and horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Add some padding */
+  padding: 40px 10px;
+  /* Remove bottom border-radius so it connects smoothly with main */
+  border-radius: 0;
+  /* Remove box-shadow for a seamless look */
+  box-shadow: none;
+  /* Remove margin or set margin-bottom to 0 to attach to main */
+  margin-bottom: 30px; /* Adds space below the welcome section */
+}
+
+/* Make the welcome section heading larger for emphasis */
+.welcome-section h1 {
+  font-size: 3.5em; /* Makes the main heading much bigger */
+  margin-bottom: 10px; /* Adds space below the heading */
+}
+
+/* Make the welcome section paragraph a bit larger */
+.welcome-section p {
+  font-size: 1.2em; /* Slightly larger text for the paragraph */
+}
+
+/* Set a high-tech, futuristic background for the whole page */
+/* This uses a dark background with glowing blue lines for a simple "tech" effect */
+body {
+  background-color: #4c817b; /* Very dark blue for a futuristic look */
+  /* Add glowing diagonal lines using linear gradients */
+  background-image:
+    repeating-linear-gradient(
+      120deg,
+      rgba(227, 212, 9, 0.08) 0px,
+      rgba(225, 222, 9, 0.08) 2px,
+      transparent 2px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      60deg,
+      rgba(233, 233, 16, 0.08) 0px,
+      rgba(239, 224, 9, 0.08) 2px,
+      transparent 2px,
+      transparent 40px
+    );
+  background-size: 40px 40px;
+}
+
+/* Style the footer with a white background and centered text */
+footer {
+  background-color: #fff;      /* White background */
+  color: #06070b;              /* Dark text for contrast */
+  text-align: center;          /* Center the text */
+  padding: 15px 0;             /* Add some space above and below */
+  margin-top: 20px;            /* Space above the footer */
+  border-top: 1px solid #ccc;  /* Optional: subtle top border */
+}
+
+/* Style for your name under the avatar */
+.my-name {
+  font-size: 1.2em;         /* Make the name a bit larger */
+  font-weight: bold;        /* Make the name bold */
+  text-align: center;       /* Center the text */
+  margin: 10px 0 0 0;       /* Add some space above */
+  color: #050606;           /* Dark color for contrast */
+}
+
+/* Style for the social icons under contact */
+.social-icons {
+  margin-top: 10px;           /* Space above the icons */
+  text-align: center;         /* Center the icons */
+}
+
+.social-icons a {
+  text-decoration: none;      /* Remove underline from links */
+  margin: 0 10px;             /* Space between icons */
+  font-size: 2em;             /* Make icons larger */
+  vertical-align: middle;     /* Align icons nicely */
+}
+
+.social-icons a:hover .icon {
+  opacity: 0.7;               /* Slight fade on hover */
+}
+
+/* Style for the coming soon message in the footer */
+.coming-soon {
+  color: #d35400;           /* Orange color for attention */
+  font-size: 1.2em;         /* Slightly larger text */
+  font-weight: bold;        /* Make it bold */
+  text-align: center;       /* Center the text */
+  margin-top: 10px;         /* Space above the message */
+}
+
+/* Style for the footer contact section */
+.footer-contact {
+  margin-top: 10px;         /* Space above the contact section */
+  text-align: center;       /* Center the contact and icons */
+  font-size: 1em;
+}
+
+/* Give each main section (Home, About, Skills) a separate background with space between */
+/* This makes each section stand out for beginners */
+main section {
+  background-color: rgba(235, 190, 217, 0.85); /* White with a little transparency */
+  border-radius: 10px;                         /* Rounded corners for a soft look */
+  padding: 20px;                               /* Space inside each section */
+  margin-bottom: 30px;                         /* Space between sections */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);      /* Soft shadow for separation */
+}

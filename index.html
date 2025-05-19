@@ -2,10 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Personal Site(firsttime)</title>
+  <title>My Personal Site </title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Add your HTML content here -->
+  <!-- Navigation bar at the very top of the page -->
+  <nav>
+    <ul>
+      <!-- Home now points to the welcome section -->
+      <li><a href="#welcome">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Welcome section below the navigation bar, with an id for linking -->
+  <section class="welcome-section" id="welcome">
+    <!-- Girl avatar image in a circular frame -->
+    <div class="avatar-frame">
+      <!-- Replace the src below with your actual image path if needed -->
+      <img src="C:/Users/nrai1/Downloads/Screenshot 2025-05-19 122158.png" alt="Girl Avatar" class="avatar-img">
+    </div>
+    <!-- Add your name under the avatar -->
+    <p class="my-name">Neha Rai</p>
+    <h1>Welcome to My Personal Site</h1>
+    <p>This is my space to share my journey in web development!</p>
+  </section>
+
+  <!-- Main content -->
+  <main>
+    <!-- Removed the Home section as requested -->
+
+    <!-- Group 2: About Me -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hi, my name is Neha! I'm excited to explore the world of web development, both for personal creativity and professional growth. My passion for building websites drives me to develop new skills that I can use in the future. Through my career development class, I aim to refine my abilities and turn this passion into a meaningful opportunity.
+      </p>
+    </section>
+
+    <!-- Group 3: Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <p>
+        I am currently learning HTML, CSS, and JavaScript. I am also interested in exploring frameworks like React and Vue.js to enhance my web development skills. My goal is to create interactive and user-friendly websites that provide a great experience for users.
+      </p>
+      <p>
+        I am also interested in learning about backend development and databases to become a full-stack developer. I believe that having a strong foundation in both frontend and backend technologies will allow me to create more complex and dynamic web applications.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer at the very bottom of the page -->
+  <footer id="contact">
+    <!-- Your site name -->
+    <p>&copy; 2025 My Personal Site</p>
+    <!-- Coming soon message -->
+    <p class="coming-soon">Will be added coming soon</p>
+    <!-- Contact and social links together -->
+    <div class="footer-contact">
+      <span>Contact:</span>
+      <!-- Social icons for LinkedIn and GitHub -->
+      <div class="social-icons">
+        <!-- LinkedIn icon using emoji and a link -->
+        <a href="https://www.linkedin.com/in/your-linkedin-username" target="_blank" title="LinkedIn">
+          <span class="icon">🔗</span>
+        </a>
+        <!-- GitHub icon using emoji and a link -->
+        <a href="https://github.com/your-github-username" target="_blank" title="GitHub">
+          <span class="icon">🐱</span>
+        </a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
