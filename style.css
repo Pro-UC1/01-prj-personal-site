@@ -89,11 +89,12 @@ main h2 {
   font-size: 1.2em; /* Slightly larger text for the paragraph */
 }
 
-/* Set a background color for the whole page that matches the welcome section */
+/* Set a background image for the whole page */
 body {
-  background-color: #a6a8e3; /* Light purple, matches the welcome section overlay */
-  /* Remove the previous background pattern for a simple, matching look */
-  background-image: none;
+  background-image: url('img/gray-bkg.png'); /* Use your background image */
+  background-size: cover;        /* Make the image cover the whole page */
+  background-position: center;   /* Center the image */
+  background-repeat: no-repeat;  /* Do not repeat the image */
 }
 
 /* Style the footer with a white background and centered text */
