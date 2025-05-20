@@ -59,27 +59,23 @@ main h2 {
 }
 
 /* Welcome section styles */
-/* This section will have a light purple background with a simple striped texture */
+/* This section will have a background image and a little transparency */
 .welcome-section {
-  /* Light purple background */
-  background-color: #a6a8e3;
-  /* Add a simple striped texture using a linear gradient */
-  background-image: "img/bkg.png";
-  /* Make the section take up about half the page height */
-  min-height: 40vh;
-  /* Center the text vertically and horizontally */
-  display: flex;
+  /* Use your background image for the welcome section */
+  background-image: url('img/bkg.png');
+  background-size: cover;           /* Make the image cover the whole section */
+  background-position: center;      /* Center the image */
+  background-repeat: no-repeat;     /* Do not repeat the image */
+  background-color: rgba(166, 168, 227, 0.85); /* Add a light purple transparent overlay */
+  min-height: 40vh;                 /* Make the section take up about half the page height */
+  display: flex;                    /* Center the text vertically and horizontally */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* Add some padding */
-  padding: 40px 10px;
-  /* Remove bottom border-radius so it connects smoothly with main */
+  padding: 40px 10px;               /* Add some padding */
   border-radius: 0;
-  /* Remove box-shadow for a seamless look */
   box-shadow: none;
-  /* Remove margin or set margin-bottom to 0 to attach to main */
-  margin-bottom: 30px; /* Adds space below the welcome section */
+  margin-bottom: 30px;
 }
 
 /* Make the welcome section heading larger for emphasis */
@@ -93,27 +89,11 @@ main h2 {
   font-size: 1.2em; /* Slightly larger text for the paragraph */
 }
 
-/* Set a high-tech, futuristic background for the whole page */
-/* This uses a dark background with glowing blue lines for a simple "tech" effect */
+/* Set a background color for the whole page that matches the welcome section */
 body {
-  background-color: #4c817b; /* Very dark blue for a futuristic look */
-  /* Add glowing diagonal lines using linear gradients */
-  background-image:
-    repeating-linear-gradient(
-      120deg,
-      rgba(227, 212, 9, 0.08) 0px,
-      rgba(225, 222, 9, 0.08) 2px,
-      transparent 2px,
-      transparent 40px
-    ),
-    repeating-linear-gradient(
-      60deg,
-      rgba(233, 233, 16, 0.08) 0px,
-      rgba(239, 224, 9, 0.08) 2px,
-      transparent 2px,
-      transparent 40px
-    );
-  background-size: 40px 40px;
+  background-color: #a6a8e3; /* Light purple, matches the welcome section overlay */
+  /* Remove the previous background pattern for a simple, matching look */
+  background-image: none;
 }
 
 /* Style the footer with a white background and centered text */
