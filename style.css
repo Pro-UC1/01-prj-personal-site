@@ -152,9 +152,10 @@ footer {
   margin: 0 10px;             /* Space between icons */
   font-size: 2em;             /* Make icons larger */
   vertical-align: middle;     /* Align icons nicely */
+  color: #232946; /* Dark color for icons */
 }
 
-.social-icons a:hover .icon {
+.social-icons a:hover {
   opacity: 0.7;               /* Slight fade on hover */
 }
 
@@ -183,3 +184,6 @@ main section {
   margin-bottom: 30px;                         /* Space between sections */
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);      /* Soft shadow for separation */
 }
+
+/* Add this line in the <head> section to include Font Awesome icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
