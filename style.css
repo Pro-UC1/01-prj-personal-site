@@ -64,13 +64,7 @@ main h2 {
   /* Light purple background */
   background-color: #a6a8e3;
   /* Add a simple striped texture using a linear gradient */
-  background-image: repeating-linear-gradient(
-    135deg,           /* Angle of the stripes */
-    #5a717c,          /* Start with the base color */
-    #98944b 20px,     /* Keep the base color for 20px */
-    #538077 20px,     /* Start the stripe color at 20px */
-    #a785a5f0 40px      /* Stripe color for 20px, then repeat */
-  );
+  background-image: "img/bkg.png";
   /* Make the section take up about half the page height */
   min-height: 40vh;
   /* Center the text vertically and horizontally */
