@@ -388,3 +388,55 @@ main section {
     font-size: 0.8em;
   }
 }
+
+/* Make the Featured Projects section stand out with a different background */
+#featured-projects {
+  /* Use a darker background color to make it stand out */
+  background-color: rgba(50, 50, 80, 0.9) !important;
+  /* Change text color to white for better contrast */
+  color: white;
+  /* Add extra padding to make it look more special */
+  padding: 30px !important;
+  /* Add a border to make it more distinct */
+  border: 2px solid #333;
+}
+
+/* Make the Featured Projects heading white and larger */
+#featured-projects h2 {
+  /* White color for the heading */
+  color: white;
+  /* Make it a bit larger */
+  font-size: 2.2em;
+  /* Add space below the heading */
+  margin-bottom: 20px;
+}
+
+/* Make the description text under the heading white */
+#featured-projects > p {
+  /* White color for the description */
+  color: white;
+  /* Make it a bit larger */
+  font-size: 1.1em;
+}
+
+/* Keep the project cards with white background for contrast */
+.project-card {
+  /* Keep white background for the individual cards */
+  background-color: white;
+  /* Keep dark text in the cards */
+  color: #333;
+  /* Add a bit more shadow to make cards pop out */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Make project card titles dark (since cards are white) */
+.project-card h3 {
+  /* Dark color for card titles */
+  color: #333;
+}
+
+/* Make project card descriptions dark (since cards are white) */
+.project-card p {
+  /* Dark gray for card descriptions */
+  color: #666;
+}
