@@ -193,6 +193,16 @@ main section {
   margin-bottom: 20px;
   /* Center text inside each card */
   text-align: center;
+  /* Add smooth animation when card changes - this makes the hover effect smooth */
+  transition: transform 0.3s ease;
+}
+
+/* Add hover effect to project cards */
+.project-card:hover {
+  /* Move the card up slightly when hovering over it */
+  transform: translateY(-5px);
+  /* Make the shadow bigger when hovering to make card look like it's floating */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 /* Project image styles */
