@@ -189,6 +189,18 @@ main section {
     border-left: 5px solid #4caf50;
 }
 
+/* Remove bullet points from skills section lists */
+#skills ul {
+    list-style-type: none; /* Remove the bullet points */
+    padding-left: 0; /* Remove the left padding that makes space for bullets */
+}
+
+/* Make skills list items look nice without bullets */
+#skills li {
+    padding: 5px 0; /* Add some space between each skill */
+    margin: 2px 0; /* Add a tiny bit of margin */
+}
+
 /* Style the About section with a warm color */
 #about {
     background: linear-gradient(135deg, rgba(255,248,225,0.95) 0%, rgba(255,236,179,0.95) 100%) !important;
