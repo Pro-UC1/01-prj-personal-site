@@ -2,16 +2,17 @@
 /* give the header a blue background and white text */
 /* Style the header */
 header {
-    background-color: #ebacac;
-    color: rgb(122, 171, 168);
+    background-color: #3498db;
+    color: white;
     padding: 10px;
     text-align: center;
 }
 
-/* Style the navigation bar */
+/* Style the navigation bar with a modern gradient */
 nav {
-    background-color: #2e2e2e;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 /* Style the list inside the navigation bar */
@@ -29,14 +30,16 @@ nav ul li {
 }
 
 nav ul li a {
-    color: rgb(1000, 1000, 1000);
+    color: white;
     text-decoration: none; /* Remove underline */
     font-weight: bold;
-    font-size: 2em
+    font-size: 2em;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    text-decoration: underline; /* Add underline on hover */
+    color: #ffd700; /* Gold color on hover */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 /* Center the main content section */
@@ -59,88 +62,102 @@ main h2 {
 }
 
 /* Welcome section styles */
-/* This section will have a background image and a little transparency */
+/* This section will have a beautiful gradient background */
 .welcome-section {
-  /* Use your background image for the welcome section */
-  background-image: url('img/bkg.png');
-  background-size: cover;           /* Make the image cover the whole section */
-  background-position: center;      /* Center the image */
-  background-repeat: no-repeat;     /* Do not repeat the image */
-  background-color: rgba(166, 168, 227, 0.85); /* Add a light purple transparent overlay */
-  min-height: 40vh;                 /* Make the section take up about half the page height */
-  display: flex;                    /* Center the text vertically and horizontally */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 10px;               /* Add some padding */
-  border-radius: 0;
-  box-shadow: none;
-  margin-bottom: 30px;
+    /* Use a beautiful gradient instead of image */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 10px;
+    border-radius: 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    color: white;
 }
 
 /* Make the welcome section heading larger for emphasis */
 .welcome-section h1 {
-  font-size: 3.5em; /* Makes the main heading much bigger */
-  margin-bottom: 10px; /* Adds space below the heading */
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 /* Make the welcome section paragraph a bit larger */
 .welcome-section p {
-  font-size: 1.2em; /* Slightly larger text for the paragraph */
+    font-size: 1.2em;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
-/* Set a background image for the whole page */
+/* Set a beautiful gradient background for the whole page */
 body {
-  background-image: url('img/gray-bkg.png'); /* Use your background image */
-  background-size: cover;        /* Make the image cover the whole page */
-  background-position: center;   /* Center the image */
-  background-repeat: no-repeat;  /* Do not repeat the image */
+    background: linear-gradient(45deg, #f093fb 0%, #f5576c 25%, #4facfe 50%, #00f2fe 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
 }
 
-/* Style the footer with a white background and centered text */
+/* Add animation to the background gradient */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Style the footer with a modern dark theme */
 footer {
-  background-color: #fff;      /* White background */
-  color: #06070b;              /* Dark text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 15px 0;             /* Add some space above and below */
-  margin-top: 20px;            /* Space above the footer */
-  border-top: 1px solid #ccc;  /* Optional: subtle top border */
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 }
 
 /* Style for your name under the avatar */
 .my-name {
-  font-size: 1.2em;         /* Make the name a bit larger */
-  font-weight: bold;        /* Make the name bold */
-  text-align: center;       /* Center the text */
-  margin: 10px 0 0 0;       /* Add some space above */
-  color: #050606;           /* Dark color for contrast */
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0 0;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 /* Style for the social icons under contact */
 .social-icons {
-  margin-top: 10px;           /* Space above the icons */
-  text-align: center;         /* Center the icons */
+    margin-top: 10px;
+    text-align: center;
 }
 
 .social-icons a {
-  text-decoration: none;      /* Remove underline from links */
-  margin: 0 10px;             /* Space between icons */
-  font-size: 2em;             /* Make icons larger */
-  vertical-align: middle;     /* Align icons nicely */
-  color: #232946; /* Dark color for icons */
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 2em;
+    vertical-align: middle;
+    color: #3498db;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover {
-  opacity: 0.7;               /* Slight fade on hover */
+    color: #e74c3c;
+    transform: scale(1.2);
 }
 
 /* Style for the coming soon message in the footer */
 .coming-soon {
-  color: #d35400;           /* Orange color for attention */
-  font-size: 1.2em;         /* Slightly larger text */
-  font-weight: bold;        /* Make it bold */
-  text-align: center;       /* Center the text */
-  margin-top: 10px;         /* Space above the message */
+    color: #f39c12;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
 }
 
 /* Style for the footer contact section */
@@ -150,14 +167,28 @@ footer {
   font-size: 1em;
 }
 
-/* Give each main section (Home, About, Skills) a separate background with space between */
+/* Give each main section beautiful colors and better contrast */
 /* This makes each section stand out for beginners */
 main section {
-  background-color: rgba(145, 145, 166, 0.85); /* White with a little transparency */
-  border-radius: 10px;                         /* Rounded corners for a soft look */
-  padding: 20px;                               /* Space inside each section */
-  margin-bottom: 30px;                         /* Space between sections */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);      /* Soft shadow for separation */
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,248,255,0.95) 100%);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* Style the Skills section with a special color */
+#skills {
+    background: linear-gradient(135deg, rgba(232,245,233,0.95) 0%, rgba(200,230,201,0.95) 100%) !important;
+    border-left: 5px solid #4caf50;
+}
+
+/* Style the About section with a warm color */
+#about {
+    background: linear-gradient(135deg, rgba(255,248,225,0.95) 0%, rgba(255,236,179,0.95) 100%) !important;
+    border-left: 5px solid #ff9800;
 }
 
 /* Add this line in the <head> section to include Font Awesome icons */
@@ -245,30 +276,24 @@ main section {
   line-height: 1.5;
 }
 
-/* Project link button styles */
+/* Project link button styles with better colors */
 .project-link {
-  /* Make link look like a button */
-  display: inline-block;
-  /* Add padding inside the button */
-  padding: 10px 20px;
-  /* Use blue background color */
-  background-color: #007bff;
-  /* Use white text color */
-  color: white;
-  /* Remove underline from link */
-  text-decoration: none;
-  /* Add rounded corners to button */
-  border-radius: 5px;
-  /* Make text bold */
-  font-weight: bold;
-  /* Add transition for smooth hover effect */
-  transition: background-color 0.3s;
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
-/* Change button color when hovering */
+/* Change button style when hovering */
 .project-link:hover {
-  /* Use darker blue when hovering */
-  background-color: #0056b3;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
 /* RESPONSIVE DESIGN - Make the site work well on phones and tablets */
@@ -399,54 +424,42 @@ main section {
   }
 }
 
-/* Make the Featured Projects section stand out with a different background */
+/* Make the Featured Projects section more colorful */
 #featured-projects {
-  /* Use a darker background color to make it stand out */
-  background-color: rgba(50, 50, 80, 0.9) !important;
-  /* Change text color to white for better contrast */
-  color: white;
-  /* Add extra padding to make it look more special */
-  padding: 30px !important;
-  /* Add a border to make it more distinct */
-  border: 2px solid #333;
+    background: linear-gradient(135deg, rgba(45,55,72,0.95) 0%, rgba(68,90,120,0.95) 100%) !important;
+    color: white;
+    padding: 35px !important;
+    border-radius: 15px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: none;
 }
 
-/* Make the Featured Projects heading white and larger */
+/* Make the Featured Projects heading more vibrant */
 #featured-projects h2 {
-  /* White color for the heading */
-  color: white;
-  /* Make it a bit larger */
-  font-size: 2.2em;
-  /* Add space below the heading */
-  margin-bottom: 20px;
+    color: #ffd700;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-/* Make the description text under the heading white */
+/* Make the description text under the heading golden */
 #featured-projects > p {
-  /* White color for the description */
-  color: white;
-  /* Make it a bit larger */
-  font-size: 1.1em;
+    color: #f8f9fa;
+    font-size: 1.2em;
 }
 
-/* Keep the project cards with white background for contrast */
+/* Keep the project cards bright and clean */
 .project-card {
-  /* Keep white background for the individual cards */
-  background-color: white;
-  /* Keep dark text in the cards */
-  color: #333;
-  /* Add a bit more shadow to make cards pop out */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: #333;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
 }
 
-/* Make project card titles dark (since cards are white) */
-.project-card h3 {
-  /* Dark color for card titles */
-  color: #333;
-}
-
-/* Make project card descriptions dark (since cards are white) */
-.project-card p {
-  /* Dark gray for card descriptions */
-  color: #666;
+/* Add a glowing effect on project card hover */
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+    border: 1px solid rgba(102, 126, 234, 0.2);
 }
