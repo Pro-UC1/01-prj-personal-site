@@ -26,15 +26,19 @@ nav ul {
 
 /* Style the links inside the navigation bar */
 nav ul li {
-    margin: 0 100px; /* Add space between items */
+    /* Use flexible spacing that adjusts to screen size */
+    margin: 0 5%; /* Use percentage instead of fixed pixels */
 }
 
 nav ul li a {
     color: white;
     text-decoration: none; /* Remove underline */
     font-weight: bold;
-    font-size: 2em;
+    /* Use relative font size that adjusts to screen */
+    font-size: 1.8em;
     transition: color 0.3s ease;
+    /* Make sure text doesn't wrap */
+    white-space: nowrap;
 }
 
 nav ul li a:hover {
@@ -300,20 +304,19 @@ main section {
 /* These rules only apply when the screen is 768px wide or smaller */
 @media screen and (max-width: 768px) {
   
-  /* Make navigation items stack vertically on small screens */
-  nav ul {
-    flex-direction: column; /* Stack items vertically instead of horizontally */
-    align-items: center;    /* Center the stacked items */
-  }
-  
-  /* Reduce spacing between navigation items on small screens */
+  /* Make navigation items closer together on smaller screens */
   nav ul li {
-    margin: 10px 0;         /* Less space between items when stacked */
+    margin: 0 2%; /* Even less space between items for tablets */
   }
   
   /* Make navigation links smaller on small screens */
   nav ul li a {
-    font-size: 1.5em;      /* Smaller font size for mobile */
+    font-size: 1.4em; /* Smaller font size for tablets */
+  }
+  
+  /* Reduce navigation bar padding on mobile */
+  nav {
+    padding: 20px 10px; /* Less padding but keep some space */
   }
   
   /* Make the welcome section heading smaller on small screens */
@@ -382,26 +385,54 @@ main section {
     font-size: 2em;        /* Even smaller heading for tiny screens */
   }
   
-  /* Make navigation links even smaller for very small screens */
+  /* Make navigation spacing very small for phones */
+  nav ul li {
+    margin: 0 0.5%; /* Even smaller space for phone screens */
+  }
+  
+  /* Make navigation links smaller for phone screens */
   nav ul li a {
-    font-size: 1.2em;      /* Smaller font for very small screens */
+    font-size: 0.9em; /* Very small font that definitely fits on phone screens */
   }
   
-  /* Make text in sections smaller for very small screens */
+  /* Make navigation bar more compact on phones */
+  nav {
+    padding: 10px 2px; /* Very little padding on phones */
+  }
+  
+  /* Make the welcome section paragraph smaller on very small screens */
+  .welcome-section p {
+    font-size: 1em;        /* Smaller paragraph for tiny screens */
+  }
+  
+  /* Make main content take up more of the screen width on very small screens */
+  main {
+    max-width: 95%;        /* Use more of the screen width */
+    padding: 5px;          /* Less padding on very small screens */
+  }
+  
+  /* Reduce padding in main sections for very small screens */
   main section {
-    font-size: 0.9em;      /* Slightly smaller text overall */
+    padding: 10px;         /* Less padding inside sections */
+    margin-bottom: 15px;   /* Less space between sections */
   }
   
-  /* Make the avatar area more compact on very small screens */
-  .my-name {
-    font-size: 1em;        /* Smaller name text */
+  /* Make the navigation bar take up less space on very small screens */
+  nav {
+    padding: 8px 1px;         /* Less padding in the navigation */
   }
   
-  /* Make project cards even more compact */
+  /* Make social icons smaller on very small screens */
+  .social-icons a {
+    font-size: 1.2em;      /* Smaller social icons for very small screens */
+    margin: 0 3px;         /* Less space between social icons */
+  }
+  
+  /* Make project cards take full width on very small screens */
   .project-card {
     /* Use full width on very small screens */
     width: 100%;
-    /* Use minimal padding */
+    /* Use minimal padding on very small screens */
     padding: 8px;
   }
   
@@ -421,6 +452,52 @@ main section {
   .project-card p {
     /* Use smaller font size */
     font-size: 0.8em;
+  }
+}
+
+/* RESPONSIVE DESIGN - For very small screens like iPhone SE */
+/* These rules only apply when the screen is 375px wide or smaller */
+@media screen and (max-width: 375px) {
+  
+  /* Make navigation items even closer together for very small phones */
+  nav ul li {
+    margin: 0 0.2%; /* Almost no space between items */
+  }
+  
+  /* Make navigation text even smaller */
+  nav ul li a {
+    font-size: 0.8em; /* Very small text for tiny phone screens */
+  }
+  
+  /* Remove almost all padding from navigation */
+  nav {
+    padding: 8px 1px; /* Minimal padding for very small screens */
+  }
+  
+  /* Make the welcome heading smaller */
+  .welcome-section h1 {
+    font-size: 1.8em; /* Smaller heading for very small phones */
+  }
+}
+
+/* RESPONSIVE DESIGN - For extra small screens like older iPhones */
+/* These rules only apply when the screen is 320px wide or smaller */
+@media screen and (max-width: 320px) {
+  
+  /* Make navigation items use minimal space */
+  nav ul li {
+    margin: 0; /* No space between items at all */
+  }
+  
+  /* Make navigation text very small */
+  nav ul li a {
+    font-size: 0.7em; /* Tiny text for very old phone screens */
+    padding: 2px; /* Add a tiny bit of padding to make it touchable */
+  }
+  
+  /* Make navigation bar very compact */
+  nav {
+    padding: 5px 0; /* Almost no padding */
   }
 }
 
