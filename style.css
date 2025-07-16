@@ -162,3 +162,229 @@ main section {
 
 /* Add this line in the <head> section to include Font Awesome icons */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+/* Featured Projects Section Styles */
+.projects-container {
+  /* Use flexbox to arrange projects in rows */
+  display: flex;
+  /* Allow projects to wrap to new lines */
+  flex-wrap: wrap;
+  /* Add space between project cards */
+  gap: 20px;
+  /* Center the projects */
+  justify-content: center;
+  /* Add space above the projects */
+  margin-top: 20px;
+}
+
+/* Individual project card styles */
+.project-card {
+  /* Set a fixed width for each project card */
+  width: 300px;
+  /* Add a white background */
+  background-color: white;
+  /* Add rounded corners */
+  border-radius: 10px;
+  /* Add a subtle shadow */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  /* Add padding inside each card */
+  padding: 15px;
+  /* Add space between elements inside the card */
+  margin-bottom: 20px;
+  /* Center text inside each card */
+  text-align: center;
+}
+
+/* Project image styles */
+.project-image {
+  /* Make image take full width of the card */
+  width: 100%;
+  /* Set a fixed height for all images */
+  height: 200px;
+  /* Make sure image covers the area nicely */
+  object-fit: cover;
+  /* Add rounded corners to images */
+  border-radius: 8px;
+  /* Add space below the image */
+  margin-bottom: 15px;
+}
+
+/* Project title styles */
+.project-card h3 {
+  /* Make title larger */
+  font-size: 1.3em;
+  /* Make title bold */
+  font-weight: bold;
+  /* Add space below title */
+  margin-bottom: 10px;
+  /* Use dark color for title */
+  color: #333;
+}
+
+/* Project description styles */
+.project-card p {
+  /* Make description text smaller */
+  font-size: 0.9em;
+  /* Use gray color for description */
+  color: #666;
+  /* Add space below description */
+  margin-bottom: 15px;
+  /* Make text align to left for better reading */
+  text-align: left;
+  /* Add line height for better readability */
+  line-height: 1.5;
+}
+
+/* Project link button styles */
+.project-link {
+  /* Make link look like a button */
+  display: inline-block;
+  /* Add padding inside the button */
+  padding: 10px 20px;
+  /* Use blue background color */
+  background-color: #007bff;
+  /* Use white text color */
+  color: white;
+  /* Remove underline from link */
+  text-decoration: none;
+  /* Add rounded corners to button */
+  border-radius: 5px;
+  /* Make text bold */
+  font-weight: bold;
+  /* Add transition for smooth hover effect */
+  transition: background-color 0.3s;
+}
+
+/* Change button color when hovering */
+.project-link:hover {
+  /* Use darker blue when hovering */
+  background-color: #0056b3;
+}
+
+/* RESPONSIVE DESIGN - Make the site work well on phones and tablets */
+/* These rules only apply when the screen is 768px wide or smaller */
+@media screen and (max-width: 768px) {
+  
+  /* Make navigation items stack vertically on small screens */
+  nav ul {
+    flex-direction: column; /* Stack items vertically instead of horizontally */
+    align-items: center;    /* Center the stacked items */
+  }
+  
+  /* Reduce spacing between navigation items on small screens */
+  nav ul li {
+    margin: 10px 0;         /* Less space between items when stacked */
+  }
+  
+  /* Make navigation links smaller on small screens */
+  nav ul li a {
+    font-size: 1.5em;      /* Smaller font size for mobile */
+  }
+  
+  /* Make the welcome section heading smaller on small screens */
+  .welcome-section h1 {
+    font-size: 2.5em;      /* Smaller heading for mobile screens */
+  }
+  
+  /* Reduce padding in the welcome section for small screens */
+  .welcome-section {
+    padding: 20px 10px;    /* Less padding on mobile */
+    min-height: 30vh;      /* Less height on mobile */
+  }
+  
+  /* Make main content take up more of the screen width on mobile */
+  main {
+    max-width: 95%;        /* Use more of the screen width */
+    padding: 5px;          /* Less padding on mobile */
+  }
+  
+  /* Reduce padding in main sections for small screens */
+  main section {
+    padding: 15px;         /* Less padding inside sections */
+    margin-bottom: 20px;   /* Less space between sections */
+  }
+  
+  /* Make the navigation bar take up less space on mobile */
+  nav {
+    padding: 15px;         /* Less padding in the navigation */
+  }
+  
+  /* Make social icons smaller on mobile */
+  .social-icons a {
+    font-size: 1.5em;      /* Smaller social icons for mobile */
+    margin: 0 5px;         /* Less space between social icons */
+  }
+  
+  /* Make project cards take full width on mobile */
+  .project-card {
+    /* Use almost full width on mobile */
+    width: 95%;
+    /* Use less padding on mobile */
+    padding: 10px;
+  }
+  
+  /* Make project images shorter on mobile */
+  .project-image {
+    /* Use smaller height on mobile */
+    height: 150px;
+  }
+  
+  /* Stack projects in one column on mobile */
+  .projects-container {
+    /* Change to column layout */
+    flex-direction: column;
+    /* Center projects */
+    align-items: center;
+  }
+}
+
+/* RESPONSIVE DESIGN - Extra small screens like phones in portrait mode */
+/* These rules only apply when the screen is 480px wide or smaller */
+@media screen and (max-width: 480px) {
+  
+  /* Make the welcome heading even smaller for very small screens */
+  .welcome-section h1 {
+    font-size: 2em;        /* Even smaller heading for tiny screens */
+  }
+  
+  /* Make navigation links even smaller for very small screens */
+  nav ul li a {
+    font-size: 1.2em;      /* Smaller font for very small screens */
+  }
+  
+  /* Make text in sections smaller for very small screens */
+  main section {
+    font-size: 0.9em;      /* Slightly smaller text overall */
+  }
+  
+  /* Make the avatar area more compact on very small screens */
+  .my-name {
+    font-size: 1em;        /* Smaller name text */
+  }
+  
+  /* Make project cards even more compact */
+  .project-card {
+    /* Use full width on very small screens */
+    width: 100%;
+    /* Use minimal padding */
+    padding: 8px;
+  }
+  
+  /* Make project images even shorter on very small screens */
+  .project-image {
+    /* Use smaller height on tiny screens */
+    height: 120px;
+  }
+  
+  /* Make project title smaller on tiny screens */
+  .project-card h3 {
+    /* Use smaller font size */
+    font-size: 1.1em;
+  }
+  
+  /* Make description text smaller on tiny screens */
+  .project-card p {
+    /* Use smaller font size */
+    font-size: 0.8em;
+  }
+}
