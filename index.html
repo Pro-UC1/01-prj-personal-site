@@ -9,121 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-<style>
-  :root{
-    --paper:#F4F5F8; --surface:#FFFFFF; --ink:#17181D; --muted:#5B6472;
-    --line:#E5E8EE; --accent:#5A34D6; --accent-050:#EFEBFB; --accent-ink:#4326A8;
-    --maxw:1060px; --r:14px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0; background:var(--paper); color:var(--ink);
-    font-family:"Inter",system-ui,sans-serif; font-size:16px; line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit; text-decoration:none;}
-  h1,h2,h3{font-family:"Space Grotesk",sans-serif; line-height:1.1; margin:0; letter-spacing:-.01em;}
-  section{max-width:var(--maxw); margin:0 auto; padding:72px 24px;}
-  .sec-title{font-size:1.6rem; font-weight:700; margin-bottom:6px;}
-  .sec-lead{color:var(--muted); margin:0 0 34px; max-width:60ch;}
-
-  /* NAV */
-  nav{
-    position:sticky; top:0; z-index:50; background:rgba(244,245,248,.82);
-    backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
-  }
-  .nav-inner{max-width:var(--maxw); margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between;}
-  .brand{font-family:"Space Grotesk"; font-weight:700; font-size:1.05rem; letter-spacing:-.02em;}
-  .brand span{color:var(--accent);}
-  .nav-links{display:flex; gap:26px; align-items:center;}
-  .nav-links a{color:var(--muted); font-size:.94rem; font-weight:500; transition:color .15s;}
-  .nav-links a:hover{color:var(--ink);}
-  .nav-cta{background:var(--ink); color:#fff !important; padding:8px 16px; border-radius:999px; font-size:.9rem;}
-  .nav-cta:hover{background:var(--accent);}
-  @media(max-width:720px){ .nav-links a:not(.nav-cta){display:none;} }
-
-  /* HERO */
-  .hero{padding-top:84px; padding-bottom:40px;}
-  .hero .eyebrow{color:var(--accent-ink); font-weight:600; font-size:.95rem; margin:0 0 18px;}
-  .hero h1{font-size:clamp(2.6rem,7vw,4.4rem); font-weight:700; max-width:16ch;}
-  .hero .role{font-size:clamp(1.15rem,2.4vw,1.5rem); color:var(--ink); font-weight:600; margin:20px 0 14px; font-family:"Space Grotesk";}
-  .hero p.blurb{font-size:1.1rem; color:var(--muted); max-width:56ch; margin:0 0 30px;}
-  .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:26px;}
-  .btn{display:inline-flex; align-items:center; gap:9px; padding:12px 20px; border-radius:999px; font-weight:600; font-size:.96rem; border:1px solid transparent; transition:transform .12s, background .15s, border-color .15s;}
-  .btn-primary{background:var(--accent); color:#fff;}
-  .btn-primary:hover{background:var(--accent-ink);}
-  .btn-ghost{background:transparent; border-color:var(--line); color:var(--ink);}
-  .btn-ghost:hover{border-color:var(--accent); color:var(--accent-ink);}
-  .chips{display:flex; flex-wrap:wrap; gap:10px;}
-  .chip{display:inline-flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:7px 14px; font-size:.86rem; color:var(--muted);}
-  .chip i{color:var(--accent);}
-
-  /* ABOUT */
-  .about-grid{display:grid; grid-template-columns:1.5fr 1fr; gap:40px; align-items:start;}
-  .about-grid p{margin:0 0 16px; color:#33363E;}
-  .facts{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:6px 22px;}
-  .fact{display:flex; flex-direction:column; gap:2px; padding:16px 0; border-bottom:1px solid var(--line);}
-  .fact:last-child{border-bottom:none;}
-  .fact .k{font-size:.78rem; color:var(--muted); font-weight:600; text-transform:none;}
-  .fact .v{font-weight:600; font-family:"Space Grotesk";}
-  @media(max-width:720px){ .about-grid{grid-template-columns:1fr;} }
-
-  /* EXPERIENCE */
-  .exp{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:26px 28px;}
-  .exp-head{display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; align-items:baseline;}
-  .exp-role{font-size:1.2rem; font-weight:700;}
-  .exp-co{color:var(--accent-ink); font-weight:600;}
-  .exp-date{color:var(--muted); font-size:.92rem;}
-  .exp ul{margin:16px 0 18px; padding-left:20px; color:#33363E;}
-  .exp li{margin-bottom:8px;}
-  .taglist{display:flex; flex-wrap:wrap; gap:8px; margin-top:4px;}
-  .tag{background:var(--accent-050); color:var(--accent-ink); border-radius:6px; padding:4px 10px; font-size:.8rem; font-weight:500;}
-
-  /* PROJECTS */
-  .proj-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px;}
-  .proj{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; display:flex; flex-direction:column; transition:border-color .15s;}
-  .proj:hover{border-color:var(--accent);}
-  .proj-top{height:112px; position:relative; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--g1),var(--g2));}
-  .proj-emoji{font-size:2.4rem; filter:drop-shadow(0 2px 6px rgba(0,0,0,.25));}
-  .proj-kind{position:absolute; top:12px; left:14px; color:rgba(255,255,255,.92); font-size:.76rem; font-weight:600; background:rgba(0,0,0,.22); padding:4px 10px; border-radius:999px;}
-  .proj-body{padding:20px 20px 22px; display:flex; flex-direction:column; flex:1;}
-  .proj-body h3{font-size:1.14rem; font-weight:700; margin-bottom:8px;}
-  .proj-body p{color:var(--muted); font-size:.94rem; margin:0 0 14px;}
-  .proj .taglist{margin-top:auto; margin-bottom:16px;}
-  .proj-links{display:flex; gap:18px; padding-top:14px; border-top:1px solid var(--line);}
-  .proj-links a{font-weight:600; font-size:.9rem; color:var(--accent-ink); display:inline-flex; align-items:center; gap:7px;}
-  .proj-links a:hover{text-decoration:underline;}
-  .proj-links a.muted{color:var(--muted);}
-
-  /* SKILLS */
-  .skill-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px;}
-  .skill-cat{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:20px 22px;}
-  .skill-cat h3{font-size:.95rem; font-weight:700; margin-bottom:14px; display:flex; align-items:center; gap:9px;}
-  .skill-cat h3 i{color:var(--accent);}
-  .skill-cat .taglist .tag{background:#F2F3F6; color:#3A3F4A;}
-
-  /* CONTACT */
-  .contact{text-align:center; background:var(--ink); color:#fff; max-width:none;}
-  .contact-inner{max-width:var(--maxw); margin:0 auto; padding:76px 24px;}
-  .contact h2{font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700; color:#fff; margin-bottom:14px;}
-  .contact p{color:#B9BEC9; max-width:48ch; margin:0 auto 30px;}
-  .contact .btn-primary{background:var(--accent);}
-  .contact .btn-primary:hover{background:#6d46e6;}
-  .contact .btn-ghost{border-color:#3A3D47; color:#fff;}
-  .contact .btn-ghost:hover{border-color:#fff; color:#fff;}
-  .foot{border-top:1px solid #2A2D36; margin-top:56px; padding-top:26px; color:#8A909C; font-size:.86rem; display:flex; justify-content:center; gap:22px; flex-wrap:wrap;}
-  .foot a{color:#B9BEC9;} .foot a:hover{color:#fff;}
-
-  :focus-visible{outline:3px solid var(--accent); outline-offset:2px; border-radius:4px;}
-  @media(prefers-reduced-motion:no-preference){
-    .hero > *{opacity:0; transform:translateY(14px); animation:rise .6s ease forwards;}
-    .hero .eyebrow{animation-delay:.05s} .hero h1{animation-delay:.12s}
-    .hero .role{animation-delay:.19s} .hero .blurb{animation-delay:.26s}
-    .hero .cta-row{animation-delay:.33s} .hero .chips{animation-delay:.4s}
-    @keyframes rise{to{opacity:1; transform:none;}}
-  }
-</style>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -153,7 +39,7 @@
   <div class="chips">
     <span class="chip"><i class="fas fa-location-dot"></i> Cincinnati, OH</span>
     <span class="chip"><i class="fas fa-graduation-cap"></i> UC Computer Science, 2028</span>
-    <span class="chip"><i class="fas fa-code"></i> C++ · Java · JavaScript· Python</span>
+    <span class="chip"><i class="fas fa-code"></i> C++ · Java · JavaScript</span>
   </div>
 </header>
 
@@ -163,13 +49,13 @@
     <div>
       <p>Hi, I'm Neha — a Computer Science student at the University of Cincinnati who loves building things end to end. I recently finished a full-stack software co-op where I designed a database, built a REST API, and shipped the interface that used it.</p>
       <p>Outside of class I build and ship web apps — from a conference registration platform I containerized and deployed to Azure, to an AI chatbot and a NASA image explorer. I'm happiest when I'm picking up a new tool and turning it into something real and working.</p>
-      <p>Right now I'm looking for a Summer 2027 software co-op where I can keep learning on a real product alongside experienced engineers.</p>
+      <p>Right now I'm looking for a Fall 2026 software co-op where I can keep learning on a real product alongside experienced engineers.</p>
     </div>
     <div class="facts">
-      <div class="fact"><span class="k">Education</span><span class="v">B.S. Computer Science</span><span class="k">University of Cincinnati · 2028 · GPA 3.7</span></div>
+      <div class="fact"><span class="k">Education</span><span class="v">B.S. Computer Science</span><span class="k">University of Cincinnati · 2028 · GPA 3.6</span></div>
       <div class="fact"><span class="k">Based in</span><span class="v">Cincinnati, OH</span></div>
       <div class="fact"><span class="k">Focus</span><span class="v">Full-stack web · AI integration</span></div>
-      <div class="fact"><span class="k">Open to</span><span class="v">Summer 2027 co-op / internship</span></div>
+      <div class="fact"><span class="k">Open to</span><span class="v">Fall 2026 co-op / internship</span></div>
     </div>
   </div>
 </section>
@@ -195,15 +81,17 @@
       <span class="tag">React</span><span class="tag">Spring Boot</span><span class="tag">MySQL</span>
       <span class="tag">REST API</span><span class="tag">Git</span><span class="tag">JavaScript</span>
     </div>
-     <div class="proj-links" style="margin-top:18px;">
+    <div class="proj-links" style="margin-top:18px;">
       <a href="https://www.gradestep.com/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Live demo — GradeStep</a>
     </div>
   </div>
 </section>
 
 <section id="projects">
-  <h2 class="sec-title">Personal Projects</h2>
-  <p class="sec-lead">A mix of live web apps and code projects. Most link straight to a working demo you can try.</p>
+  <h2 class="sec-title">Projects</h2>
+  <p class="sec-lead">A mix of things I've built on my own and projects from coursework. Most link straight to a working demo you can try.</p>
+
+  <h3 class="proj-group">Personal projects</h3>
   <div class="proj-grid">
 
     <article class="proj" style="--g1:#12408F;--g2:#22A6C9;">
@@ -218,6 +106,11 @@
         </div>
       </div>
     </article>
+
+  </div>
+
+  <h3 class="proj-group second">Class projects</h3>
+  <div class="proj-grid">
 
     <article class="proj" style="--g1:#1a1a1a;--g2:#C8A24A;">
       <div class="proj-top"><span class="proj-kind">AI · Web app</span><span class="proj-emoji">💬</span></div>

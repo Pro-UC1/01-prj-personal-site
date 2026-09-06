@@ -70,6 +70,8 @@
   .tag{background:var(--accent-050); color:var(--accent-ink); border-radius:6px; padding:4px 10px; font-size:.8rem; font-weight:500;}
 
   /* PROJECTS */
+  .proj-group{font-family:"Space Grotesk"; font-size:1.15rem; font-weight:700; margin:0 0 18px;}
+  .proj-group.second{margin-top:46px;}
   .proj-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px;}
   .proj{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; display:flex; flex-direction:column; transition:border-color .15s;}
   .proj:hover{border-color:var(--accent);}
