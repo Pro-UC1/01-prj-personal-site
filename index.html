@@ -1,255 +1,352 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Personal Site </title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Add Font Awesome CDN link for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neha Rai — Web Developer</title>
+<meta name="description" content="Neha Rai — Computer Science student and full-stack web developer. Projects, experience, and contact." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<style>
+  :root{
+    --paper:#F4F5F8; --surface:#FFFFFF; --ink:#17181D; --muted:#5B6472;
+    --line:#E5E8EE; --accent:#5A34D6; --accent-050:#EFEBFB; --accent-ink:#4326A8;
+    --maxw:1060px; --r:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif; font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  h1,h2,h3{font-family:"Space Grotesk",sans-serif; line-height:1.1; margin:0; letter-spacing:-.01em;}
+  section{max-width:var(--maxw); margin:0 auto; padding:72px 24px;}
+  .sec-title{font-size:1.6rem; font-weight:700; margin-bottom:6px;}
+  .sec-lead{color:var(--muted); margin:0 0 34px; max-width:60ch;}
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:50; background:rgba(244,245,248,.82);
+    backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+  }
+  .nav-inner{max-width:var(--maxw); margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between;}
+  .brand{font-family:"Space Grotesk"; font-weight:700; font-size:1.05rem; letter-spacing:-.02em;}
+  .brand span{color:var(--accent);}
+  .nav-links{display:flex; gap:26px; align-items:center;}
+  .nav-links a{color:var(--muted); font-size:.94rem; font-weight:500; transition:color .15s;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{background:var(--ink); color:#fff !important; padding:8px 16px; border-radius:999px; font-size:.9rem;}
+  .nav-cta:hover{background:var(--accent);}
+  @media(max-width:720px){ .nav-links a:not(.nav-cta){display:none;} }
+
+  /* HERO */
+  .hero{padding-top:84px; padding-bottom:40px;}
+  .hero .eyebrow{color:var(--accent-ink); font-weight:600; font-size:.95rem; margin:0 0 18px;}
+  .hero h1{font-size:clamp(2.6rem,7vw,4.4rem); font-weight:700; max-width:16ch;}
+  .hero .role{font-size:clamp(1.15rem,2.4vw,1.5rem); color:var(--ink); font-weight:600; margin:20px 0 14px; font-family:"Space Grotesk";}
+  .hero p.blurb{font-size:1.1rem; color:var(--muted); max-width:56ch; margin:0 0 30px;}
+  .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:26px;}
+  .btn{display:inline-flex; align-items:center; gap:9px; padding:12px 20px; border-radius:999px; font-weight:600; font-size:.96rem; border:1px solid transparent; transition:transform .12s, background .15s, border-color .15s;}
+  .btn-primary{background:var(--accent); color:#fff;}
+  .btn-primary:hover{background:var(--accent-ink);}
+  .btn-ghost{background:transparent; border-color:var(--line); color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--accent); color:var(--accent-ink);}
+  .chips{display:flex; flex-wrap:wrap; gap:10px;}
+  .chip{display:inline-flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:7px 14px; font-size:.86rem; color:var(--muted);}
+  .chip i{color:var(--accent);}
+
+  /* ABOUT */
+  .about-grid{display:grid; grid-template-columns:1.5fr 1fr; gap:40px; align-items:start;}
+  .about-grid p{margin:0 0 16px; color:#33363E;}
+  .facts{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:6px 22px;}
+  .fact{display:flex; flex-direction:column; gap:2px; padding:16px 0; border-bottom:1px solid var(--line);}
+  .fact:last-child{border-bottom:none;}
+  .fact .k{font-size:.78rem; color:var(--muted); font-weight:600; text-transform:none;}
+  .fact .v{font-weight:600; font-family:"Space Grotesk";}
+  @media(max-width:720px){ .about-grid{grid-template-columns:1fr;} }
+
+  /* EXPERIENCE */
+  .exp{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:26px 28px;}
+  .exp-head{display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; align-items:baseline;}
+  .exp-role{font-size:1.2rem; font-weight:700;}
+  .exp-co{color:var(--accent-ink); font-weight:600;}
+  .exp-date{color:var(--muted); font-size:.92rem;}
+  .exp ul{margin:16px 0 18px; padding-left:20px; color:#33363E;}
+  .exp li{margin-bottom:8px;}
+  .taglist{display:flex; flex-wrap:wrap; gap:8px; margin-top:4px;}
+  .tag{background:var(--accent-050); color:var(--accent-ink); border-radius:6px; padding:4px 10px; font-size:.8rem; font-weight:500;}
+
+  /* PROJECTS */
+  .proj-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px;}
+  .proj{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; display:flex; flex-direction:column; transition:border-color .15s;}
+  .proj:hover{border-color:var(--accent);}
+  .proj-top{height:112px; position:relative; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--g1),var(--g2));}
+  .proj-emoji{font-size:2.4rem; filter:drop-shadow(0 2px 6px rgba(0,0,0,.25));}
+  .proj-kind{position:absolute; top:12px; left:14px; color:rgba(255,255,255,.92); font-size:.76rem; font-weight:600; background:rgba(0,0,0,.22); padding:4px 10px; border-radius:999px;}
+  .proj-body{padding:20px 20px 22px; display:flex; flex-direction:column; flex:1;}
+  .proj-body h3{font-size:1.14rem; font-weight:700; margin-bottom:8px;}
+  .proj-body p{color:var(--muted); font-size:.94rem; margin:0 0 14px;}
+  .proj .taglist{margin-top:auto; margin-bottom:16px;}
+  .proj-links{display:flex; gap:18px; padding-top:14px; border-top:1px solid var(--line);}
+  .proj-links a{font-weight:600; font-size:.9rem; color:var(--accent-ink); display:inline-flex; align-items:center; gap:7px;}
+  .proj-links a:hover{text-decoration:underline;}
+  .proj-links a.muted{color:var(--muted);}
+
+  /* SKILLS */
+  .skill-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px;}
+  .skill-cat{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:20px 22px;}
+  .skill-cat h3{font-size:.95rem; font-weight:700; margin-bottom:14px; display:flex; align-items:center; gap:9px;}
+  .skill-cat h3 i{color:var(--accent);}
+  .skill-cat .taglist .tag{background:#F2F3F6; color:#3A3F4A;}
+
+  /* CONTACT */
+  .contact{text-align:center; background:var(--ink); color:#fff; max-width:none;}
+  .contact-inner{max-width:var(--maxw); margin:0 auto; padding:76px 24px;}
+  .contact h2{font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700; color:#fff; margin-bottom:14px;}
+  .contact p{color:#B9BEC9; max-width:48ch; margin:0 auto 30px;}
+  .contact .btn-primary{background:var(--accent);}
+  .contact .btn-primary:hover{background:#6d46e6;}
+  .contact .btn-ghost{border-color:#3A3D47; color:#fff;}
+  .contact .btn-ghost:hover{border-color:#fff; color:#fff;}
+  .foot{border-top:1px solid #2A2D36; margin-top:56px; padding-top:26px; color:#8A909C; font-size:.86rem; display:flex; justify-content:center; gap:22px; flex-wrap:wrap;}
+  .foot a{color:#B9BEC9;} .foot a:hover{color:#fff;}
+
+  :focus-visible{outline:3px solid var(--accent); outline-offset:2px; border-radius:4px;}
+  @media(prefers-reduced-motion:no-preference){
+    .hero > *{opacity:0; transform:translateY(14px); animation:rise .6s ease forwards;}
+    .hero .eyebrow{animation-delay:.05s} .hero h1{animation-delay:.12s}
+    .hero .role{animation-delay:.19s} .hero .blurb{animation-delay:.26s}
+    .hero .cta-row{animation-delay:.33s} .hero .chips{animation-delay:.4s}
+    @keyframes rise{to{opacity:1; transform:none;}}
+  }
+</style>
 </head>
-
 <body>
-  <!-- Navigation bar at the very top of the page -->
-  <nav>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="brand">Neha<span>.</span>Rai</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <p class="eyebrow">Open to Fall 2026 software co-op / internship</p>
+  <h1>I build web apps people actually use.</h1>
+  <p class="role">Neha Rai — Computer Science student &amp; full-stack web developer</p>
+  <p class="blurb">I like owning a project end to end — designing the database, wiring up the backend, and crafting the interface. Lately I've been building AI-powered tools and shipping them live.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="#projects"><i class="fas fa-layer-group"></i> See my work</a>
+    <a class="btn btn-ghost" href="https://github.com/Pro-UC1" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/in/neha-rai-a2167a178" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+  </div>
+  <div class="chips">
+    <span class="chip"><i class="fas fa-location-dot"></i> Cincinnati, OH</span>
+    <span class="chip"><i class="fas fa-graduation-cap"></i> UC Computer Science, 2028</span>
+    <span class="chip"><i class="fas fa-code"></i> C++ · Java · JavaScript</span>
+  </div>
+</header>
+
+<section id="about">
+  <h2 class="sec-title">About me</h2>
+  <div class="about-grid">
+    <div>
+      <p>Hi, I'm Neha — a Computer Science student at the University of Cincinnati who loves building things end to end. I recently finished a full-stack software co-op where I designed a database, built a REST API, and shipped the interface that used it.</p>
+      <p>Outside of class I build and ship web apps — from a conference registration platform I containerized and deployed to Azure, to an AI chatbot and a NASA image explorer. I'm happiest when I'm picking up a new tool and turning it into something real and working.</p>
+      <p>Right now I'm looking for a Fall 2026 software co-op where I can keep learning on a real product alongside experienced engineers.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><span class="k">Education</span><span class="v">B.S. Computer Science</span><span class="k">University of Cincinnati · 2028 · GPA 3.6</span></div>
+      <div class="fact"><span class="k">Based in</span><span class="v">Cincinnati, OH</span></div>
+      <div class="fact"><span class="k">Focus</span><span class="v">Full-stack web · AI integration</span></div>
+      <div class="fact"><span class="k">Open to</span><span class="v">Fall 2026 co-op / internship</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2 class="sec-title">Experience</h2>
+  <p class="sec-lead">Where I've applied this on a real product with a team.</p>
+  <div class="exp">
+    <div class="exp-head">
+      <div>
+        <div class="exp-role">Software Developer Co-op</div>
+        <div class="exp-co">Dexter Global Technology LLC</div>
+      </div>
+      <div class="exp-date">Spring 2026</div>
+    </div>
     <ul>
-      <!-- Home now points to the welcome section -->
-      <li><a href="#welcome">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <!-- Fix: Change from #project to #featured-projects to match the actual section ID -->
-      <li><a href="#featured-projects">Project</a></li>  
-      <li><a href="#contact">Contact</a></li>
+      <li>Built and shipped a full-stack math-learning web app for K–12 students, with a React frontend and a Spring Boot REST API backed by MySQL.</li>
+      <li>Designed the relational database for quizzes, answers, and lesson tips, and wrote the SQL — including transactions — to keep the data consistent.</li>
+      <li>Developed, tested, and debugged features independently across the interface, API, and database, tracing issues layer by layer to find the root cause.</li>
+      <li>Managed the codebase in Git with an iterative build–review–improve workflow, collaborating with the team on design decisions.</li>
     </ul>
-  </nav>
-
-  <!-- Welcome section below the navigation bar, with an id for linking -->
-  <section class="welcome-section" id="welcome">
-    <!-- Girl avatar image in a circular frame -->
-    <div class="avatar-frame">
-      <!-- Replace the src below with your actual image path if needed -->
-      <img src="img/avatar.JPG" width="80px" alt="Girl Avatar" class="avatar-img">
+    <div class="taglist">
+      <span class="tag">React</span><span class="tag">Spring Boot</span><span class="tag">MySQL</span>
+      <span class="tag">REST API</span><span class="tag">Git</span><span class="tag">JavaScript</span>
     </div>
-    <!-- Add your name under the avatar -->
-    <p class="my-name">Neha Rai</p>
-    <h1> Full Stack Developer </h1>
-    <p>This is my space to share my journey in web development!</p>
-  </section>
+  </div>
+</section>
 
-  <!-- Main content -->
-  <main>
-    <!-- About Me Section -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Hi, my name is Neha! I'm excited to explore the world of web development, both for personal creativity and professional growth. My passion for building websites drives me to develop new skills that I can use in the future. I aim to refine my abilities and turn this passion into a meaningful opportunity.
-      </p>   
-      
-      <!-- Strengths section -->
-      <h3>Strengths</h3>
-      <ul>
-        <li>Quick learner with strong problem-solving abilities</li>
-        <li>Detail-oriented and organized approach to coding</li>
-        <li>Strong foundation in multiple programming languages</li>
-        <li>Excellent teamwork and communication skills</li>
-        <li>Passionate about web development and creating user-friendly applications</li>
-      </ul>
+<section id="projects">
+  <h2 class="sec-title">Projects</h2>
+  <p class="sec-lead">A mix of live web apps and code projects. Most link straight to a working demo you can try.</p>
+  <div class="proj-grid">
 
-      <!-- Areas of Improvement section -->
-      <h3>Areas of Improvement</h3>
-      <ul>
-        <li>Advanced JavaScript frameworks like React and Angular</li>
-        <li>Backend development with Node.js and Express</li>
-        <li>Database design and optimization techniques</li>
-        <li>Mobile app development</li>
-        <li>DevOps and deployment processes</li>
-      </ul>
-
-      <!-- Goals section -->
-      <h3>Career Goals</h3>
-      <ul>
-        <li>Become a proficient full-stack developer</li>
-        <li>Contribute to open-source projects</li>
-        <li>Build responsive and accessible web applications</li>
-        <li>Learn cloud technologies like AWS or Azure</li>
-        <li>Mentor other aspiring developers</li>
-        <li>Work on projects that make a positive impact</li>
-      </ul>
-    </section>
-
-
-
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-      <h2>Technical Skills</h2>      
-  
-      <!-- Programming Languages as bullet points -->
-      <p><strong>Programming Languages:</strong></p>
-      <ul>
-        <li>C</li>
-        <li>C++</li>
-        <li>Java</li>
-        <li>Python</li>
-        <li>JavaScript</li>
-      </ul>
-      
-      <!-- Web Frameworks as bullet points -->
-      <p><strong>Web Frameworks:</strong></p>
-      <ul>
-        <li>Spring Boot</li>
-        <li>Flask</li>
-        <li>Bootstrap</li>
-      </ul>
-      
-      <!-- Databases as bullet points -->
-      <p><strong>Databases:</strong></p>
-      <ul>
-         
-        <li>MySQL</li>
-        <li>PostgreSQL</li>
-      </ul>
-      
-      <!-- Other Tools as bullet points -->
-      <p><strong>Other Tools:</strong></p>
-      <ul>
-        <li>Microsoft Word</li>
-        <li>Microsoft Excel</li>
-        <li>Microsoft PowerPoint</li>
-      </ul>
-      
-      <!-- IDEs as bullet points -->
-      <p><strong>IDE:</strong></p>
-      <ul>
-        <li>Visual Studio Code</li>
-        <li>IntelliJ IDEA</li>
-        
-         
-      </ul>
-
-      <!-- Soft Skills as bullet points -->
-      <p><strong>Soft Skills:</strong></p>
-      <ul>
-        <li>Team Leadership</li>
-        <li>Communication</li>
-        <li>Collaboration</li>
-      </ul>
-
-      <!-- Add new sections for career development -->
-    </section>
-
-    <!-- Featured Projects Section -->
-    <section id="featured-projects">
-      <h2>Featured Projects</h2>
-      <p>Here are some of my recent web development projects:</p>
-      
-      <!-- Container for all projects -->
-      <div class="projects-container">
-        
-        <!-- Project 1 -->
-        <div class="project-card">
-          <!-- Project image placeholder -->
-          <img src="img/personal-portfolio.png" alt="Personal Portfolio" class="project-image">
-          <!-- Project title -->
-          <h3>Personal Portfolio</h3>
-          <!-- Project description -->
-          <p>A responsive personal website built with HTML and CSS showcasing my skills and projects.</p>
-          <!-- Link to live site -->
-          <a href="https://pro-uc1.github.io/01-prj-personal-site/" class="project-link" target="_blank">View project</a>
+    <article class="proj" style="--g1:#12408F;--g2:#22A6C9;">
+      <div class="proj-top"><span class="proj-kind">Full-stack · Cloud</span><span class="proj-emoji">📝</span></div>
+      <div class="proj-body">
+        <h3>Conference Registration App</h3>
+        <p>A full-stack app that replaced a manual sign-up with a live online form — with editable entries, a password-protected admin dashboard, CSV export, and automated email notifications. Containerized with Docker and deployed on Azure.</p>
+        <div class="taglist"><span class="tag">Python (Flask)</span><span class="tag">MongoDB Atlas</span><span class="tag">Docker</span><span class="tag">Azure</span></div>
+        <div class="proj-links">
+          <a href="https://conference-app-2026-bxdgfzghamf0fmh0.canadacentral-01.azurewebsites.net" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Live demo</a>
+          <a class="muted" href="https://github.com/Pro-UC1" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
         </div>
-
-        <!-- Project 2 -->
-        <div class="project-card">
-          <!-- Project image placeholder -->
-          <img src="img/waterdrop-game.png" alt="Waterdrop Game" class="project-image">
-          <!-- Project title -->
-          <h3>Waterdrop Game</h3>
-          <!-- Project description -->
-          <p>A fun and interactive game built with JavaScript, where players catch falling water droplets.</p>
-          <!-- Link to live site -->
-          <a href="https://pro-uc1.github.io/complete-water-game/" class="project-link" target="_blank">View project</a>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card">
-          <!-- Project image placeholder -->
-          <img src="img/nasa-explorer.png" alt="NASA Explorer" class="project-image">
-          <!-- Project title -->
-          <h3>NASA Explorer</h3>
-          <!-- Project description -->
-          <p>An interactive web application that allows users to explore NASA's image and video library.</p>
-          <!-- Link to live site -->
-          <a href="https://pro-uc1.github.io/final-space/" class="project-link" target="_blank">View project</a>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-card">
-          <!-- Project image placeholder -->
-          <img src="img/loreal-chatbot.png" alt="L'Oreal Chatbot" class="project-image">
-          <!-- Project title -->
-          <h3>L'Oreal Chatbot</h3>
-          <!-- Project description -->
-          <p>A chatbot application for L'Oreal that provides personalized skincare recommendations.</p>
-          <!-- Link to live site -->
-          <a href="https://pro-uc1.github.io/08-prj-loreal-chatbot/" class="project-link" target="_blank">View project</a>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="project-card">
-          <!-- Project image placeholder -->
-          <img src="img/loreal-product.png" alt="L'Oreal Product" class="project-image">
-          <!-- Project title -->
-          <h3>L'Oreal Product</h3>
-          <!-- Project description -->
-          <p>A showcase of L'Oreal's latest skincare products with detailed descriptions and user reviews.</p>
-          <!-- Link to live site -->
-          <a href="https://codi-eng.github.io/09-prj-loreal-routine-builder/" class="project-link" target="_blank">View project</a>
-        </div>
-
-        <!-- Project 6 -->
-        <div class="project-card">
-          <!-- Project image placeholder -->
-          <img src="img/intel-journey.png" alt="Intel Journey" class="project-image">
-          <!-- Project title -->
-          <h3>Intel Journey RTL</h3>
-          <!-- Project description -->
-          <p>An accessible Intel Journey webpage adapted for right-to-left languages with Bootstrap integration and newsletter subscription.</p>
-          <!-- Link to live site -->
-          <a href="https://pro-uc1.github.io/03-pro-intel/" class="project-link" target="_blank">View project</a>
-        </div>
-
       </div>
-    </section>
-  </main>
+    </article>
 
-  <!-- Footer at the very bottom of the page -->
-  <footer id="contact">
-    <!-- Your site name -->
-    <p>&copy; 2025 My Personal Site</p>
-    <!-- Coming soon message -->
-    <!-- Contact and social links together -->
-    <div class="footer-contact">
-      <span>Contact:</span>
-      <!-- Social icons for LinkedIn and GitHub -->
-      <div class="social-icons">
-        <!-- Phone icon with your number displayed -->
-        <a href="tel:5022968324" title="Call me">
-          <!-- Font Awesome Phone icon -->
-          <i class="fas fa-phone"></i>
-          <!-- Show the phone number next to the icon -->
-          (502) 296-8324
-        </a>
-        <!-- LinkedIn icon using Font Awesome for a professional look -->
-        <a href="https://www.linkedin.com/in/neha-rai-a2167a178" target="_blank" title="LinkedIn">
-          <!-- Font Awesome LinkedIn icon -->
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <!-- GitHub icon using Font Awesome for a professional look -->
-        <a href="https://github.com/Pro-UC1" target="_blank" title="GitHub">
-          <!-- Font Awesome GitHub icon -->
-          <i class="fab fa-github"></i>
-        </a>
+    <article class="proj" style="--g1:#1a1a1a;--g2:#C8A24A;">
+      <div class="proj-top"><span class="proj-kind">AI · Web app</span><span class="proj-emoji">💬</span></div>
+      <div class="proj-body">
+        <h3>L'Oréal Product Advisor</h3>
+        <p>A chat assistant that gives personalized product recommendations, powered by OpenAI's GPT-4o called securely through a Cloudflare Worker so the API key stays hidden.</p>
+        <div class="taglist"><span class="tag">JavaScript</span><span class="tag">OpenAI GPT-4o</span><span class="tag">Cloudflare Workers</span></div>
+        <div class="proj-links">
+          <a href="https://pro-uc1.github.io/08-prj-loreal-chatbot/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Live demo</a>
+          <a class="muted" href="https://github.com/Pro-UC1/loreal-chatbot-complete" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+        </div>
       </div>
+    </article>
+
+    <article class="proj" style="--g1:#B8860B;--g2:#2b2b2b;">
+      <div class="proj-top"><span class="proj-kind">Web app</span><span class="proj-emoji">🧴</span></div>
+      <div class="proj-body">
+        <h3>L'Oréal Routine Builder</h3>
+        <p>An interactive tool that helps users build a personalized skincare routine from a product catalog, with a clean, branded interface.</p>
+        <div class="taglist"><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
+        <div class="proj-links">
+          <a href="https://codi-eng.github.io/09-prj-loreal-routine-builder/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Live demo</a>
+          <a class="muted" href="https://github.com/Pro-UC1" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj" style="--g1:#1E88C7;--g2:#5FC7EC;">
+      <div class="proj-top"><span class="proj-kind">Game</span><span class="proj-emoji">💧</span></div>
+      <div class="proj-body">
+        <h3>Charity: Water — Catch the Drops</h3>
+        <p>A browser game built in vanilla JavaScript with game logic, keyboard and mouse controls, and custom CSS animations like falling drops and confetti.</p>
+        <div class="taglist"><span class="tag">JavaScript</span><span class="tag">HTML5</span><span class="tag">Bootstrap</span></div>
+        <div class="proj-links">
+          <a href="https://pro-uc1.github.io/complete-water-game/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Live demo</a>
+          <a class="muted" href="https://github.com/Pro-UC1/complete-water-game" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj" style="--g1:#0B1437;--g2:#3A4796;">
+      <div class="proj-top"><span class="proj-kind">API · Web app</span><span class="proj-emoji">🚀</span></div>
+      <div class="proj-body">
+        <h3>NASA Explorer</h3>
+        <p>An app that lets you browse NASA's image and video library, pulling live results from a public API and displaying them in a responsive gallery.</p>
+        <div class="taglist"><span class="tag">JavaScript</span><span class="tag">REST API</span><span class="tag">CSS</span></div>
+        <div class="proj-links">
+          <a href="https://pro-uc1.github.io/final-space/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Live demo</a>
+          <a class="muted" href="https://github.com/Pro-UC1" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj" style="--g1:#0068B5;--g2:#00A3E0;">
+      <div class="proj-top"><span class="proj-kind">Accessible UI</span><span class="proj-emoji">🌐</span></div>
+      <div class="proj-body">
+        <h3>Intel Journey — RTL &amp; Accessible</h3>
+        <p>A responsive Intel landing page adapted for right-to-left languages, with accessible markup, Bootstrap layout, and a newsletter signup.</p>
+        <div class="taglist"><span class="tag">HTML</span><span class="tag">Bootstrap</span><span class="tag">Accessibility</span></div>
+        <div class="proj-links">
+          <a href="https://pro-uc1.github.io/03-pro-intel/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Live demo</a>
+          <a class="muted" href="https://github.com/Pro-UC1" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj" style="--g1:#3F6F52;--g2:#79A98A;">
+      <div class="proj-top"><span class="proj-kind">Data · Java</span><span class="proj-emoji">📊</span></div>
+      <div class="proj-body">
+        <h3>Retail Data Analysis</h3>
+        <p>An object-oriented Java app that analyzes a large Amazon product-review dataset, implementing and comparing sorting and searching algorithms to surface trends.</p>
+        <div class="taglist"><span class="tag">Java</span><span class="tag">Algorithms</span><span class="tag">OOP</span></div>
+        <div class="proj-links">
+          <a class="muted" href="https://github.com/Pro-UC1" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj" style="--g1:#3A4256;--g2:#606B85;">
+      <div class="proj-top"><span class="proj-kind">Systems · C++</span><span class="proj-emoji">🎫</span></div>
+      <div class="proj-body">
+        <h3>E-Ticketing System</h3>
+        <p>An object-oriented C++ program to book, store, search, and retrieve ticket records, saving everything to a file — my first deep dive into class design and data.</p>
+        <div class="taglist"><span class="tag">C++</span><span class="tag">OOP</span><span class="tag">File I/O</span></div>
+        <div class="proj-links">
+          <a class="muted" href="https://github.com/Pro-UC1" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="skills">
+  <h2 class="sec-title">Skills</h2>
+  <p class="sec-lead">The tools I reach for, grouped by where they fit.</p>
+  <div class="skill-grid">
+    <div class="skill-cat">
+      <h3><i class="fas fa-terminal"></i> Languages</h3>
+      <div class="taglist"><span class="tag">Java</span><span class="tag">C++</span><span class="tag">C</span><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">SQL</span></div>
     </div>
-  </footer>
+    <div class="skill-cat">
+      <h3><i class="fas fa-palette"></i> Frontend</h3>
+      <div class="taglist"><span class="tag">React</span><span class="tag">HTML5</span><span class="tag">CSS</span><span class="tag">Bootstrap</span></div>
+    </div>
+    <div class="skill-cat">
+      <h3><i class="fas fa-server"></i> Backend &amp; data</h3>
+      <div class="taglist"><span class="tag">Spring Boot</span><span class="tag">Flask</span><span class="tag">REST APIs</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Oracle SQL</span></div>
+    </div>
+    <div class="skill-cat">
+      <h3><i class="fas fa-robot"></i> Tools &amp; cloud</h3>
+      <div class="taglist"><span class="tag">Docker</span><span class="tag">Azure</span><span class="tag">Git</span><span class="tag">OpenAI API</span><span class="tag">Cloudflare Workers</span><span class="tag">Claude Code</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <h2>Let's build something.</h2>
+    <p>I'm looking for a Fall 2026 software co-op, and I'd love to hear about it. Email is the fastest way to reach me.</p>
+    <div class="cta-row" style="justify-content:center;">
+      <a class="btn btn-primary" href="mailto:rainh@mail.uc.edu"><i class="fas fa-envelope"></i> rainh@mail.uc.edu</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/neha-rai-a2167a178" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/Pro-UC1" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+    <div class="foot">
+      <span>© 2026 Neha Rai</span>
+      <a href="tel:5022968324">(502) 296-8324</a>
+      <a href="mailto:rainh@mail.uc.edu">rainh@mail.uc.edu</a>
+    </div>
+  </div>
+</section>
+
 </body>
 </html>

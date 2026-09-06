@@ -1,554 +1,114 @@
-/* Add you CSS here */
-/* give the header a blue background and white text */
-/* Style the header */
-header {
-    background-color: #3498db;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
-/* Style the navigation bar with a modern gradient */
-nav {
-    background: linear-gradient(135deg, #19191a 0%, #764ba2 100%);
-    padding: 30px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-/* Style the list inside the navigation bar */
-nav ul {
-    list-style-type: none; /* Remove bullets */
-    margin: 0;
-    padding: 0;
-    display: flex; /* Arrange items in a row */
-    justify-content: center; /* Center the items */
-}
-
-/* Style the links inside the navigation bar */
-nav ul li {
-    /* Use flexible spacing that adjusts to screen size */
-    margin: 0 5%; /* Use percentage instead of fixed pixels */
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none; /* Remove underline */
-    font-weight: bold;
-    /* Use relative font size that adjusts to screen */
-    font-size: 1.8em;
-    transition: color 0.3s ease;
-    /* Make sure text doesn't wrap */
-    white-space: nowrap;
-}
-
-nav ul li a:hover {
-    color: #ffd700; /* Gold color on hover */
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
-
-/* Center the main content section */
-main {
-  /* Set a maximum width so the content doesn't stretch too wide */
-  max-width: 1000px;
-  /* Center the main section horizontally */
-  margin: 0 auto; /* Remove top margin so it attaches to welcome section */
-  /* Add some padding for better appearance */
-  padding: 10px;  
-  /* Optional: add rounded corners */
-  border-radius: 0 0 8px 8px; /* Only round the bottom corners */
-  /* Center all text inside the main section */
-  text-align: center; /* This centers all content in main */
-}
-
-/* Center all main content headings (h2) */
-main h2 {
-  text-align: center; /* This centers the heading text */
-}
-
-/* Welcome section styles */
-/* This section will have a beautiful gradient background */
-.welcome-section {
-    /* Use a beautiful gradient instead of image */
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 40vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 10px;
-    border-radius: 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    margin-bottom: 30px;
-    color: white;
-}
-
-/* Make the welcome section heading larger for emphasis */
-.welcome-section h1 {
-    font-size: 3.5em;
-    margin-bottom: 10px;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-/* Make the welcome section paragraph a bit larger */
-.welcome-section p {
-    font-size: 1.2em;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-}
-
-/* Set a beautiful gradient background for the whole page */
-body {
-    background: linear-gradient(45deg, #f093fb 0%, #f5576c 25%, #4facfe 50%, #00f2fe 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-    min-height: 100vh;
-}
-
-/* Add animation to the background gradient */
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Style the footer with a modern dark theme */
-footer {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-}
-
-/* Style for your name under the avatar */
-.my-name {
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: center;
-    margin: 10px 0 0 0;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-}
-
-/* Style for the social icons under contact */
-.social-icons {
-    margin-top: 10px;
-    text-align: center;
-}
-
-.social-icons a {
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 2em;
-    vertical-align: middle;
-    color: #3498db;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #e74c3c;
-    transform: scale(1.2);
-}
-
-/* Style for the coming soon message in the footer */
-.coming-soon {
-    color: #f39c12;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
-}
-
-/* Style for the footer contact section */
-.footer-contact {
-  margin-top: 10px;         /* Space above the contact section */
-  text-align: center;       /* Center the contact and icons */
-  font-size: 1em;
-}
-
-/* Give each main section beautiful colors and better contrast */
-/* This makes each section stand out for beginners */
-main section {
-    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,248,255,0.95) 100%);
-    border-radius: 15px;
-    padding: 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    backdrop-filter: blur(10px);
-}
-
-/* Style the Skills section with a special color */
-#skills {
-    background: linear-gradient(135deg, rgba(232,245,233,0.95) 0%, rgba(200,230,201,0.95) 100%) !important;
-    border-left: 5px solid #4caf50;
-}
-
-/* Remove bullet points from skills section lists */
-#skills ul {
-    list-style-type: none; /* Remove the bullet points */
-    padding-left: 0; /* Remove the left padding that makes space for bullets */
-}
-
-/* Make skills list items look nice without bullets */
-#skills li {
-    padding: 5px 0; /* Add some space between each skill */
-    margin: 2px 0; /* Add a tiny bit of margin */
-}
-
-/* Style the About section with a warm color */
-#about {
-    background: linear-gradient(135deg, rgba(255,248,225,0.95) 0%, rgba(255,236,179,0.95) 100%) !important;
-    border-left: 5px solid #ff9800;
-}
-
-/* Add this line in the <head> section to include Font Awesome icons */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
-
-/* Featured Projects Section Styles */
-.projects-container {
-  /* Use flexbox to arrange projects in rows */
-  display: flex;
-  /* Allow projects to wrap to new lines */
-  flex-wrap: wrap;
-  /* Add space between project cards */
-  gap: 20px;
-  /* Center the projects */
-  justify-content: center;
-  /* Add space above the projects */
-  margin-top: 20px;
-}
-
-/* Individual project card styles */
-.project-card {
-  /* Set a fixed width for each project card */
-  width: 300px;
-  /* Add a white background */
-  background-color: white;
-  /* Add rounded corners */
-  border-radius: 10px;
-  /* Add a subtle shadow */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  /* Add padding inside each card */
-  padding: 15px;
-  /* Add space between elements inside the card */
-  margin-bottom: 20px;
-  /* Center text inside each card */
-  text-align: center;
-  /* Add smooth animation when card changes - this makes the hover effect smooth */
-  transition: transform 0.3s ease;
-}
-
-/* Add hover effect to project cards */
-.project-card:hover {
-  /* Move the card up slightly when hovering over it */
-  transform: translateY(-5px);
-  /* Make the shadow bigger when hovering to make card look like it's floating */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-/* Project image styles */
-.project-image {
-  /* Make image take full width of the card */
-  width: 100%;
-  /* Set a fixed height for all images */
-  height: 200px;
-  /* Make sure image covers the area nicely */
-  object-fit: cover;
-  /* Add rounded corners to images */
-  border-radius: 8px;
-  /* Add space below the image */
-  margin-bottom: 15px;
-}
-
-/* Project title styles */
-.project-card h3 {
-  /* Make title larger */
-  font-size: 1.3em;
-  /* Make title bold */
-  font-weight: bold;
-  /* Add space below title */
-  margin-bottom: 10px;
-  /* Use dark color for title */
-  color: #333;
-}
-
-/* Project description styles */
-.project-card p {
-  /* Make description text smaller */
-  font-size: 0.9em;
-  /* Use gray color for description */
-  color: #666;
-  /* Add space below description */
-  margin-bottom: 15px;
-  /* Make text align to left for better reading */
-  text-align: left;
-  /* Add line height for better readability */
-  line-height: 1.5;
-}
-
-/* Project link button styles with better colors */
-.project-link {
-    display: inline-block;
-    padding: 12px 25px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-}
-
-/* Change button style when hovering */
-.project-link:hover {
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-}
-
-/* RESPONSIVE DESIGN - Make the site work well on phones and tablets */
-/* These rules only apply when the screen is 768px wide or smaller */
-@media screen and (max-width: 768px) {
-  
-  /* Make navigation items closer together on smaller screens */
-  nav ul li {
-    margin: 0 2%; /* Even less space between items for tablets */
+/* Neha Rai — portfolio styles */
+:root{
+    --paper:#F4F5F8; --surface:#FFFFFF; --ink:#17181D; --muted:#5B6472;
+    --line:#E5E8EE; --accent:#5A34D6; --accent-050:#EFEBFB; --accent-ink:#4326A8;
+    --maxw:1060px; --r:14px;
   }
-  
-  /* Make navigation links smaller on small screens */
-  nav ul li a {
-    font-size: 1.4em; /* Smaller font size for tablets */
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif; font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
   }
-  
-  /* Reduce navigation bar padding on mobile */
-  nav {
-    padding: 20px 10px; /* Less padding but keep some space */
-  }
-  
-  /* Make the welcome section heading smaller on small screens */
-  .welcome-section h1 {
-    font-size: 2.5em;      /* Smaller heading for mobile screens */
-  }
-  
-  /* Reduce padding in the welcome section for small screens */
-  .welcome-section {
-    padding: 20px 10px;    /* Less padding on mobile */
-    min-height: 30vh;      /* Less height on mobile */
-  }
-  
-  /* Make main content take up more of the screen width on mobile */
-  main {
-    max-width: 95%;        /* Use more of the screen width */
-    padding: 5px;          /* Less padding on mobile */
-  }
-  
-  /* Reduce padding in main sections for small screens */
-  main section {
-    padding: 15px;         /* Less padding inside sections */
-    margin-bottom: 20px;   /* Less space between sections */
-  }
-  
-  /* Make the navigation bar take up less space on mobile */
-  nav {
-    padding: 15px;         /* Less padding in the navigation */
-  }
-  
-  /* Make social icons smaller on mobile */
-  .social-icons a {
-    font-size: 1.5em;      /* Smaller social icons for mobile */
-    margin: 0 5px;         /* Less space between social icons */
-  }
-  
-  /* Make project cards take full width on mobile */
-  .project-card {
-    /* Use almost full width on mobile */
-    width: 95%;
-    /* Use less padding on mobile */
-    padding: 10px;
-  }
-  
-  /* Make project images shorter on mobile */
-  .project-image {
-    /* Use smaller height on mobile */
-    height: 150px;
-  }
-  
-  /* Stack projects in one column on mobile */
-  .projects-container {
-    /* Change to column layout */
-    flex-direction: column;
-    /* Center projects */
-    align-items: center;
-  }
-}
+  a{color:inherit; text-decoration:none;}
+  h1,h2,h3{font-family:"Space Grotesk",sans-serif; line-height:1.1; margin:0; letter-spacing:-.01em;}
+  section{max-width:var(--maxw); margin:0 auto; padding:72px 24px;}
+  .sec-title{font-size:1.6rem; font-weight:700; margin-bottom:6px;}
+  .sec-lead{color:var(--muted); margin:0 0 34px; max-width:60ch;}
 
-/* RESPONSIVE DESIGN - Extra small screens like phones in portrait mode */
-/* These rules only apply when the screen is 480px wide or smaller */
-@media screen and (max-width: 480px) {
-  
-  /* Make the welcome heading even smaller for very small screens */
-  .welcome-section h1 {
-    font-size: 2em;        /* Even smaller heading for tiny screens */
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:50; background:rgba(244,245,248,.82);
+    backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
   }
-  
-  /* Make navigation spacing very small for phones */
-  nav ul li {
-    margin: 0 0.5%; /* Even smaller space for phone screens */
-  }
-  
-  /* Make navigation links smaller for phone screens */
-  nav ul li a {
-    font-size: 0.9em; /* Very small font that definitely fits on phone screens */
-  }
-  
-  /* Make navigation bar more compact on phones */
-  nav {
-    padding: 10px 2px; /* Very little padding on phones */
-  }
-  
-  /* Make the welcome section paragraph smaller on very small screens */
-  .welcome-section p {
-    font-size: 1em;        /* Smaller paragraph for tiny screens */
-  }
-  
-  /* Make main content take up more of the screen width on very small screens */
-  main {
-    max-width: 95%;        /* Use more of the screen width */
-    padding: 5px;          /* Less padding on very small screens */
-  }
-  
-  /* Reduce padding in main sections for very small screens */
-  main section {
-    padding: 10px;         /* Less padding inside sections */
-    margin-bottom: 15px;   /* Less space between sections */
-  }
-  
-  /* Make the navigation bar take up less space on very small screens */
-  nav {
-    padding: 8px 1px;         /* Less padding in the navigation */
-  }
-  
-  /* Make social icons smaller on very small screens */
-  .social-icons a {
-    font-size: 1.2em;      /* Smaller social icons for very small screens */
-    margin: 0 3px;         /* Less space between social icons */
-  }
-  
-  /* Make project cards take full width on very small screens */
-  .project-card {
-    /* Use full width on very small screens */
-    width: 100%;
-    /* Use minimal padding on very small screens */
-    padding: 8px;
-  }
-  
-  /* Make project images even shorter on very small screens */
-  .project-image {
-    /* Use smaller height on tiny screens */
-    height: 120px;
-  }
-  
-  /* Make project title smaller on tiny screens */
-  .project-card h3 {
-    /* Use smaller font size */
-    font-size: 1.1em;
-  }
-  
-  /* Make description text smaller on tiny screens */
-  .project-card p {
-    /* Use smaller font size */
-    font-size: 0.8em;
-  }
-}
+  .nav-inner{max-width:var(--maxw); margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between;}
+  .brand{font-family:"Space Grotesk"; font-weight:700; font-size:1.05rem; letter-spacing:-.02em;}
+  .brand span{color:var(--accent);}
+  .nav-links{display:flex; gap:26px; align-items:center;}
+  .nav-links a{color:var(--muted); font-size:.94rem; font-weight:500; transition:color .15s;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{background:var(--ink); color:#fff !important; padding:8px 16px; border-radius:999px; font-size:.9rem;}
+  .nav-cta:hover{background:var(--accent);}
+  @media(max-width:720px){ .nav-links a:not(.nav-cta){display:none;} }
 
-/* RESPONSIVE DESIGN - For very small screens like iPhone SE */
-/* These rules only apply when the screen is 375px wide or smaller */
-@media screen and (max-width: 375px) {
-  
-  /* Make navigation items even closer together for very small phones */
-  nav ul li {
-    margin: 0 0.2%; /* Almost no space between items */
-  }
-  
-  /* Make navigation text even smaller */
-  nav ul li a {
-    font-size: 0.8em; /* Very small text for tiny phone screens */
-  }
-  
-  /* Remove almost all padding from navigation */
-  nav {
-    padding: 8px 1px; /* Minimal padding for very small screens */
-  }
-  
-  /* Make the welcome heading smaller */
-  .welcome-section h1 {
-    font-size: 1.8em; /* Smaller heading for very small phones */
-  }
-}
+  /* HERO */
+  .hero{padding-top:84px; padding-bottom:40px;}
+  .hero .eyebrow{color:var(--accent-ink); font-weight:600; font-size:.95rem; margin:0 0 18px;}
+  .hero h1{font-size:clamp(2.6rem,7vw,4.4rem); font-weight:700; max-width:16ch;}
+  .hero .role{font-size:clamp(1.15rem,2.4vw,1.5rem); color:var(--ink); font-weight:600; margin:20px 0 14px; font-family:"Space Grotesk";}
+  .hero p.blurb{font-size:1.1rem; color:var(--muted); max-width:56ch; margin:0 0 30px;}
+  .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:26px;}
+  .btn{display:inline-flex; align-items:center; gap:9px; padding:12px 20px; border-radius:999px; font-weight:600; font-size:.96rem; border:1px solid transparent; transition:transform .12s, background .15s, border-color .15s;}
+  .btn-primary{background:var(--accent); color:#fff;}
+  .btn-primary:hover{background:var(--accent-ink);}
+  .btn-ghost{background:transparent; border-color:var(--line); color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--accent); color:var(--accent-ink);}
+  .chips{display:flex; flex-wrap:wrap; gap:10px;}
+  .chip{display:inline-flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:7px 14px; font-size:.86rem; color:var(--muted);}
+  .chip i{color:var(--accent);}
 
-/* RESPONSIVE DESIGN - For extra small screens like older iPhones */
-/* These rules only apply when the screen is 320px wide or smaller */
-@media screen and (max-width: 320px) {
-  
-  /* Make navigation items use minimal space */
-  nav ul li {
-    margin: 0; /* No space between items at all */
+  /* ABOUT */
+  .about-grid{display:grid; grid-template-columns:1.5fr 1fr; gap:40px; align-items:start;}
+  .about-grid p{margin:0 0 16px; color:#33363E;}
+  .facts{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:6px 22px;}
+  .fact{display:flex; flex-direction:column; gap:2px; padding:16px 0; border-bottom:1px solid var(--line);}
+  .fact:last-child{border-bottom:none;}
+  .fact .k{font-size:.78rem; color:var(--muted); font-weight:600; text-transform:none;}
+  .fact .v{font-weight:600; font-family:"Space Grotesk";}
+  @media(max-width:720px){ .about-grid{grid-template-columns:1fr;} }
+
+  /* EXPERIENCE */
+  .exp{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:26px 28px;}
+  .exp-head{display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; align-items:baseline;}
+  .exp-role{font-size:1.2rem; font-weight:700;}
+  .exp-co{color:var(--accent-ink); font-weight:600;}
+  .exp-date{color:var(--muted); font-size:.92rem;}
+  .exp ul{margin:16px 0 18px; padding-left:20px; color:#33363E;}
+  .exp li{margin-bottom:8px;}
+  .taglist{display:flex; flex-wrap:wrap; gap:8px; margin-top:4px;}
+  .tag{background:var(--accent-050); color:var(--accent-ink); border-radius:6px; padding:4px 10px; font-size:.8rem; font-weight:500;}
+
+  /* PROJECTS */
+  .proj-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px;}
+  .proj{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; display:flex; flex-direction:column; transition:border-color .15s;}
+  .proj:hover{border-color:var(--accent);}
+  .proj-top{height:112px; position:relative; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--g1),var(--g2));}
+  .proj-emoji{font-size:2.4rem; filter:drop-shadow(0 2px 6px rgba(0,0,0,.25));}
+  .proj-kind{position:absolute; top:12px; left:14px; color:rgba(255,255,255,.92); font-size:.76rem; font-weight:600; background:rgba(0,0,0,.22); padding:4px 10px; border-radius:999px;}
+  .proj-body{padding:20px 20px 22px; display:flex; flex-direction:column; flex:1;}
+  .proj-body h3{font-size:1.14rem; font-weight:700; margin-bottom:8px;}
+  .proj-body p{color:var(--muted); font-size:.94rem; margin:0 0 14px;}
+  .proj .taglist{margin-top:auto; margin-bottom:16px;}
+  .proj-links{display:flex; gap:18px; padding-top:14px; border-top:1px solid var(--line);}
+  .proj-links a{font-weight:600; font-size:.9rem; color:var(--accent-ink); display:inline-flex; align-items:center; gap:7px;}
+  .proj-links a:hover{text-decoration:underline;}
+  .proj-links a.muted{color:var(--muted);}
+
+  /* SKILLS */
+  .skill-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px;}
+  .skill-cat{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:20px 22px;}
+  .skill-cat h3{font-size:.95rem; font-weight:700; margin-bottom:14px; display:flex; align-items:center; gap:9px;}
+  .skill-cat h3 i{color:var(--accent);}
+  .skill-cat .taglist .tag{background:#F2F3F6; color:#3A3F4A;}
+
+  /* CONTACT */
+  .contact{text-align:center; background:var(--ink); color:#fff; max-width:none;}
+  .contact-inner{max-width:var(--maxw); margin:0 auto; padding:76px 24px;}
+  .contact h2{font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700; color:#fff; margin-bottom:14px;}
+  .contact p{color:#B9BEC9; max-width:48ch; margin:0 auto 30px;}
+  .contact .btn-primary{background:var(--accent);}
+  .contact .btn-primary:hover{background:#6d46e6;}
+  .contact .btn-ghost{border-color:#3A3D47; color:#fff;}
+  .contact .btn-ghost:hover{border-color:#fff; color:#fff;}
+  .foot{border-top:1px solid #2A2D36; margin-top:56px; padding-top:26px; color:#8A909C; font-size:.86rem; display:flex; justify-content:center; gap:22px; flex-wrap:wrap;}
+  .foot a{color:#B9BEC9;} .foot a:hover{color:#fff;}
+
+  :focus-visible{outline:3px solid var(--accent); outline-offset:2px; border-radius:4px;}
+  @media(prefers-reduced-motion:no-preference){
+    .hero > *{opacity:0; transform:translateY(14px); animation:rise .6s ease forwards;}
+    .hero .eyebrow{animation-delay:.05s} .hero h1{animation-delay:.12s}
+    .hero .role{animation-delay:.19s} .hero .blurb{animation-delay:.26s}
+    .hero .cta-row{animation-delay:.33s} .hero .chips{animation-delay:.4s}
+    @keyframes rise{to{opacity:1; transform:none;}}
   }
-  
-  /* Make navigation text very small */
-  nav ul li a {
-    font-size: 0.7em; /* Tiny text for very old phone screens */
-    padding: 2px; /* Add a tiny bit of padding to make it touchable */
-  }
-  
-  /* Make navigation bar very compact */
-  nav {
-    padding: 5px 0; /* Almost no padding */
-  }
-}
-
-/* Make the Featured Projects section more colorful */
-#featured-projects {
-    background: linear-gradient(135deg, rgba(45,55,72,0.95) 0%, rgba(68,90,120,0.95) 100%) !important;
-    color: white;
-    padding: 35px !important;
-    border-radius: 15px !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    border: none;
-}
-
-/* Make the Featured Projects heading more vibrant */
-#featured-projects h2 {
-    color: #ffd700;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-/* Make the description text under the heading golden */
-#featured-projects > p {
-    color: #f8f9fa;
-    font-size: 1.2em;
-}
-
-/* Keep the project cards bright and clean */
-.project-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    color: #333;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    border: 1px solid rgba(255,255,255,0.3);
-    transition: all 0.3s ease;
-}
-
-/* Add a glowing effect on project card hover */
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
-    border: 1px solid rgba(102, 126, 234, 0.2);
-}
